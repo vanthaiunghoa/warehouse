@@ -7,7 +7,7 @@ env:
     - PGPORT=5433
 
 dist: trusty
-sudo: true
+sudo: required
 
 addons:
   hosts:
@@ -39,10 +39,6 @@ script:
   - node -v
   - npm -v
   - bin/tests --postgresql-host 127.0.0.1
-
-branches:
-  except:
-    - /^dependabot\//
 
 matrix:
   include:
